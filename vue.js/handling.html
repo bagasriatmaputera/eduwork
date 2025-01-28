@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <!-- Aplikasi Vue 1 -->
+    <div id="example1">
+      <button @click="greet">Klik Saya</button>
+    </div>
+    <script>
+      const { createApp } = Vue;
+
+      // Aplikasi Vue pertama
+      createApp({
+        methods: {
+          greet() {
+            alert("Halo, kamu mengklik tombol ini!");
+          },
+        },
+      }).mount("#example1");
+    </script>
+
+    <!-- Aplikasi Vue 2 -->
+    <div id="example2">
+      <button @click="greet('Bagas')">Klik Saya</button>
+    </div>
+    <script>
+      // Aplikasi Vue kedua
+      createApp({
+        methods: {
+          greet(name) {
+            alert(`Halo, ${name}!`);
+          },
+        },
+      }).mount("#example2");
+    </script>
+
+    <!-- ke3 -->
+    <div id="count">
+      <button @click="count++">Add 1</button>
+      <p>Count is: {{ count }}</p>
+    </div>
+    <script>
+      createApp({
+        data() {
+          return {
+            count: 0,
+          };
+        },
+      }).mount("#count");
+    </script>
+
+    <!-- panggil method dalam inline -->
+    <div id="methodinline">
+      <button @click="say('hello')">Say hello</button>
+      <button @click="say('bye')">Say bye</button>
+    </div>
+    <script>
+      createApp({
+        methods: {
+          say(message) {
+            alert(message);
+          },
+        },
+      }).mount("#methodinline");
+    </script>
+  </body>
+</html>
