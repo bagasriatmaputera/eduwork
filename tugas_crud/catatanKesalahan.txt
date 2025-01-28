@@ -1,0 +1,5 @@
+1.nama kolom salah pada query, id yang seharusnya id_katalog
+2. form seharusya method="post"
+3. pada href spasi harus diperhatikan karna bisa menimbulkan salah parsing url
+4. yang benar isbn = '$isbn'
+5. sering salah karena kolom harunya di input dengan data yang sudah ada misalnya penerbit maka harus masukan id penerbit yang tersedia jika tidak maka error

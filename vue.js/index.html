@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-if="status == 'tampilkan'">{{ message }}</li>
+        <!-- Menampilkan daftar user -->
+        <li v-for="(person, index) in user" :key="index">Nama: {{ person.name }}, Umur: {{person.age}}</li>
+      </ul>
+    </div>
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            message: "Hello Bagas!",
+            status: "tampilkan",
+            user: [
+              { name: "Bagas", age: 21 },
+              { name: "Riatma", age: 22 },
+              { name: "Putera", age: 27 },
+            ],
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
